@@ -1,0 +1,143 @@
+/* ///////////////////////////////////////////////////// Index \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+p {
+    margin: 0;
+}
+
+a {
+    color : white;
+}
+
+a:hover {
+    color : white;
+}
+
+
+
+#navbarContentRight {
+    text-align: right;
+    font-size: x-large;
+}
+
+.dp-minibasket {
+    margin-left: 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+     color: white;
+     font-size: larger;
+}
+
+.navbar-dark .navbar-nav {
+    color: white;
+    font-size: larger;
+    border: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+button {
+    padding:6px;
+    font:bold 13px Arial;        
+    background:#f5f5f5;
+    color:#555;
+    border-radius:2px;
+    border:1px solid #ccc;
+    box-shadow:1px 1px 3px #999;
+}
+
+
+.img-responsive {
+
+    height: auto;
+    	max-width: 100%;
+}
+
+.description {
+    text-align: left;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+}
+
+
+/*//////////////////////////////////////////////////// Products \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+
+.cadre {
+    padding: 10px;
+    border: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 10px;
+}
+
+.cadre-pickColor {
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.panier-add {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.bloc-description {
+    padding: 10px;
+    border: solid 1px lightgrey;
+    margin-top: 50px;
+
+}
+
+
+/*/////////////////////////////////////////////////////////////// Basket \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/*/
+
+.title-basket {
+    font-style: italic;
+    font-weight: 600;
+    font-size: xx-large;
+}
+
+.grid-basket {
+    padding: 10px;
+    border: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 25px;
+}
+
+.line {
+    border-bottom: grey;
+}
+
+.border-bottom:last-child {
+    border-bottom: none!important; 
+}
+
+
+
+
+
+.grid-achat {
+    padding: 10px;
+    border: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 100px;
+}
+
+
+
+.return-index {
+    text-align: right;
+}
+
+.total-price {
+    font-size: xx-large;
+}
