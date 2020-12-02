@@ -200,7 +200,7 @@ function eventPanier() { // Fonction servant à l'ajout au panier lors du click 
 
     /**
      * 
-     * @param {produit} produit 
+     * Le parametre produit = la réponse de l'API ( URL + IdProduct) et donc le produit individuel
      */
 
     function displayProducts(produit) { //Affiche le contenu de la page Product
@@ -228,13 +228,11 @@ function eventPanier() { // Fonction servant à l'ajout au panier lors du click 
 
 
 
-
-
         let lensesProduct = document.getElementById('lensesProduct');
 
         let selectLenses = document.createElement("select");
         
-            for (i = 0; i < produit.lenses.length; i++) {
+            for (i = 0; i < produit.lenses.length; i++) { //creation de la liste deroulante pour le choix de l'objectif
 
                 let lenseChoice = produit.lenses[i];
 
@@ -250,11 +248,6 @@ function eventPanier() { // Fonction servant à l'ajout au panier lors du click 
 
         
 
-
-
-
-
-
         let allPrice = ""; //** meme principe que pour l'element imgProduct  ( au dessus)
         let priceProduct = document.getElementById('priceProduct');
         let divPrice = produit.price / 100;
@@ -263,11 +256,6 @@ function eventPanier() { // Fonction servant à l'ajout au panier lors du click 
 
         allPrice += price;
         priceProduct.innerHTML = allPrice;
-
-
-
-
-
 
 
 

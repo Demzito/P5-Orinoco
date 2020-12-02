@@ -21,7 +21,6 @@ requete.onreadystatechange = function() {
 
         eventPanier();
 
-        // personnalisation(response);
     }
 }
    if(idProduct != null){            
