@@ -1,4 +1,3 @@
-/* ///////////////////////////////////////////////////// Index \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 p {
     margin: 0;
 }
@@ -11,8 +10,6 @@ a:hover {
     color : white;
 }
 
-
-
 #navbarContentRight {
     text-align: right;
     font-size: x-large;
@@ -23,8 +20,8 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-     color: white;
-     font-size: larger;
+    color: white;
+    font-size: larger;
 }
 
 .navbar-dark .navbar-nav {
@@ -50,9 +47,9 @@ button {
 
 
 .img-responsive {
-
+    
     height: auto;
-    	max-width: 100%;
+    max-width: 100%;
 }
 
 .description {
@@ -65,10 +62,6 @@ button {
     bottom: 0;
     height: 60px;
 }
-
-
-/*//////////////////////////////////////////////////// Products \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
-
 
 .cadre {
     padding: 10px;
@@ -92,11 +85,8 @@ button {
     padding: 10px;
     border: solid 1px lightgrey;
     margin-top: 50px;
-
+    
 }
-
-
-/*/////////////////////////////////////////////////////////////// Basket \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/*/
 
 .title-basket {
     font-style: italic;
@@ -120,10 +110,6 @@ button {
     border-bottom: none!important; 
 }
 
-
-
-
-
 .grid-achat {
     padding: 10px;
     border: lightgrey;
@@ -131,8 +117,6 @@ button {
     border-style: solid;
     margin-top: 100px;
 }
-
-
 
 .return-index {
     text-align: right;

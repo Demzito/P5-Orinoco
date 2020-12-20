@@ -1,153 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-    >
-    <link rel="stylesheet" href="style.css" />
-    
-    <title>Orinoco</title>
-</head>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="style.css" />
+        
+        <title>Orinoco</title>
+    </head>
 
-<body>
-    
-    <!-- ///////////////////////////////////////// Navbar ///////////////////////////////////////// -->
-    
-    <div class="bg-dark">
-        <nav class="col navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" width="auto" height="56" alt="Site logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Accueil</a>
-                    </li>    
-                </ul>
-            </div>
-            <div id="navbarContentRight">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-                        <a class="nav-basket" href="basket.html">Panier</a>
-                    </li>
-				</ul>
-			</div>
-        </nav>
-    </div>
-    
-    
-    <!-- ///////////////////////////////////////// Content //////////////////////////////////////-->
-    
-    <div id ="container" class="container">
-        <div class="row">
-            <div id="containerMainDiv" class="col-8 offset-2">
-                <div class="grid-basket">
-                    <div class="title-basket col-4 mb-3">
-                        <p>Panier</p>
-                    </div>
-                    <div id="mainDiv" class="col-12">
-                        <!-- Créaction d'article page basket -->
-                    </div>
+    <body>   
+        <!-- ///////////////////////////////////////// Navbar ///////////////////////////////////////// -->
+        <div class="bg-dark">
+            <nav class="col navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" width="auto" height="56" alt="Site logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>    
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col-3 offset-5 mb-2 mt-4">
-                        <p> Prix total : </p>
-                        <div id="total-price"></div>
-                    </div>
+                <div id="navbarContentRight">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-basket" href="basket.html">Panier</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="return-index col mt-4">
-                        <button id="clean-basket">Vider le panier</button>
+            </nav>
+        </div>
+        
+        <!-- ///////////////////////////////////////// Content //////////////////////////////////////-->
+        <div id ="container" class="container">
+            <div class="row">
+                <div id="containerMainDiv" class="col-8 offset-2">
+                    <div class="grid-basket">
+                        <div class="title-basket col-4 mb-3">
+                            <p>Panier</p>
+                        </div>
+                        <div id="mainDiv" class="col-12">
+                            <!-- Créaction d'article page basket -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="totalPrice" class="col-3 offset-5 mb-2 mt-4">
+                            <p> Prix total : </p>
+                            <div id="total-price"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id=btnCleanBasket class="return-index col mt-4">
+                            <button id="clean-basket">Vider le panier</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ///////////////////////////////////////////// Formulaire de Commande //////////////////////////////////////////////// -->
-            
-            
-
-
-
-    <section id="form-basket">
-        <form method="post" class="container-fluid text-center mt-4" action="basket.html" id="formOrder">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="firstName">Prénom</label>
-                        <input type="text" class="form-control" name="firstname" id="firstName" placeholder="Votre prenom ..." required>
+        <!-- ///////////////////////////////////////////// Formulaire de Commande //////////////////////////////////////////////// -->
+        <section id="form-basket">
+            <form method="post" class="container-fluid text-center mt-4" action="basket.html" id="formOrder">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" class="form-control" name="firstname" id="firstName" pattern="[\w]+" placeholder="Votre prenom ..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom</label>
+                            <input type="text" class="form-control" name="lastname" id="lastName" pattern="[a-zA-Z]+" placeholder="Votre nom ..." required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="lastName">Nom</label>
-                        <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Votre nom ..." required>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="address">Adresse</label>
-                        <input type="text" class="form-control" name="adresse" id="address" placeholder="Votre adresse ..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Ville</label>
-                        <input type="text" class="form-control" name="city" id="city" placeholder="Votre ville ..." required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="adresse e-mail" required>
-                    </div>
-                </div>
-            </div>
-            <a>
-                <button type="submit" class="btn btn-primary" id="confirmOrder">Confirmer</button>
-            </a>
-        </form>
-    </section>
-
-
-
-
-
-
-
-            
-            <!-- //////////////////////////////////////////// Footer /////////////////////////////////////////--> 
-            <footer>
-                <div class="bg-dark">
-                    <div class="container mt-4">
-                        <div class="row">
-                            <div class="col">
-                                <ul class="list-inline text-center">
-                                    <li class="list-inline-item"><a href="#">À propos</a></li>
-                                    <li class="list-inline-item">&middot;</li>
-                                    <li class="list-inline-item"><a href="#">Vie privée</a></li>
-                                    <li class="list-inline-item">&middot;</li>
-                                    <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
-                                </ul>
-                            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="address">Adresse</label>
+                            <input type="text" class="form-control" name="adresse" id="address"  placeholder="Votre adresse ..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <input type="text" class="form-control" name="city" id="city" pattern="[a-zA-Z]+" placeholder="Votre ville ..." required>
                         </div>
                     </div>
                 </div>
-            </footer>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email" placeholder="adresse e-mail" required>
+                        </div>
+                    </div>
+                </div>
+                <a>
+                    <button type="submit" class="btn btn-primary" id="confirmOrder">Confirmer</button>
+                </a>
+            </form>
+        </section>
             
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="app.js"></script>
-            <script src="basket.js"></script>
-            <!-- <script src="product.js"></script> -->
-        </body>
-        </html>
+        <!-- //////////////////////////////////////////// Footer /////////////////////////////////////////--> 
+        <footer>
+            <div id = "footer" class="bg-dark">
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="list-inline text-center">
+                                <li class="list-inline-item"><a href="#">À propos</a></li>
+                                <li class="list-inline-item">&middot;</li>
+                                <li class="list-inline-item"><a href="#">Vie privée</a></li>
+                                <li class="list-inline-item">&middot;</li>
+                                <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="JS/app.js"></script>
+        <script src="JS/basket.js"></script>
+        <!-- <script src="product.js"></script> -->
+    </body>
+</html>
