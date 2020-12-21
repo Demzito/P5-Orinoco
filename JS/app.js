@@ -254,6 +254,7 @@ function eventDelProduct(response) {
                 localStorage.setItem("panier", JSON.stringify(panier)); //applique les modifications et transforme en JSON le panier
                 createProducts(response); // on rappelle les fonctions pour raffraichir
                 eventDelProduct(response);
+                totalPrice(response);
             });       
         }
     }

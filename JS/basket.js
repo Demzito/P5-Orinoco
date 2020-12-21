@@ -9,6 +9,7 @@ fetch("http://localhost:3000/api/cameras/", {method:"GET"})
     if (panier != null){
         createProducts(response); 
         eventDelProduct(response);
+        totalPrice(response);
     }
     else {
         let mainDiv = document.getElementById("mainDiv");
