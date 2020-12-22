@@ -1,8 +1,7 @@
 /**Fonction qui sert à nettoyer l'integralité du panier */
-
 function cleanBasket(response) {
     let panier = JSON.parse(localStorage.getItem("panier")); // on récupere le panier et le transforme en tableau
-    if(panier === null || panier < 1) { //si le panier est null
+    if(panier === null || panier.length < 1) { //si le panier est null
         panier = []; // on le transforme en tableau vide
         let formBasket = document.getElementById("form-basket"); // on récupere l'element HTML form-basket
         formBasket.innerHTML = ""; //on remplace le formulaire par une string vide pour qu'il n'apparaisse plus
@@ -56,7 +55,7 @@ function createProducts(response) {
         }
     }             
     mainDiv.innerHTML = allArticles; //on applique la modification de la variable allArticles qui contient l'element HTML mainDiv    
-    cleanBasket(response);     
+    cleanBasket(response);
 }
 
 /**fonction qui calcule et affiche le prix total (params = tableau des produits) */
@@ -65,7 +64,7 @@ function totalPrice(response) {
     let totalP = document.getElementById("total-price");  // on recupere l'element HTML total-price
     let basket = JSON.parse(localStorage.getItem("panier")); // on récupere l'élement du localStorage "panier", le transforme en tableau puis on le met dans une variable
     let allArticles = ""; // on crée une varable qui contient une string vide
-    if (basket != null || basket >= 1){
+    if (basket != null || basket.length >= 1){
         for (i = 0; i < basket.length; i++) { // on crée la boucle sur la longueur du panier
             let productPrice = response.filter(function(element){ //on crée une variable qui contient le résultat du filter (l'objet de l'API)
                 return basket[i] == element._id;
@@ -123,14 +122,14 @@ function displayMiniBasket() {
 /**Fonction servant à l'ajout au panier lors du click sur un bouton */
 function eventPanier() { 
     let btnAddProduct = document.getElementsByClassName("btn-addProduct"); // récupération des elements (boutons) html contenant la class btn-addProduct
-    let selectedProduct = JSON.parse(localStorage.getItem("panier")); // on transforme le localStorage panier en tableau
-    if(selectedProduct === null){ // si selectedProduct est null
-        selectedProduct = []; // on le transforme en tableau vide
+    let panier = JSON.parse(localStorage.getItem("panier")); // on transforme le localStorage panier en tableau
+    if(panier === null){ // si panier est null
+        panier = []; // on le transforme en tableau vide
     }        
     for (let i = 0; i < btnAddProduct.length; i++) {  // pour tous les boutons addProduct   
         btnAddProduct[i].addEventListener("click", function (event){ //on écoute le click du bouton addProduct
-            selectedProduct.push(event.target.dataset.id); // On push l'ID du produits selectionnés dans la variable selectedProduct
-            localStorage.setItem("panier", JSON.stringify(selectedProduct)); // on applique la modification au panier et le stringify
+            panier.push(event.target.dataset.id); // On push l'ID du produits selectionnés dans la variable panier
+            localStorage.setItem("panier", JSON.stringify(panier)); // on applique la modification au panier et le stringify
             displayMiniBasket(); // on actualise le panier du header              
         });
     }
@@ -235,7 +234,7 @@ function displayAchats(response) {
 function eventDelProduct(response) {
     let btnDelProduct = document.getElementsByClassName("btn-delProduct"); // on récupére le bouton HTML DelProduct  
     let panier = JSON.parse(localStorage.getItem("panier")); // on récupere le panier et le transforme en tableau
-    if(panier === null || panier < 1) { //si le panier est null
+    if(panier === null || panier.length < 1) { //si le panier est null
         panier = []; // on le transforme en tableau vide
         let formBasket = document.getElementById("form-basket"); // on récupere l'element HTML form-basket
         formBasket.innerHTML = ""; //on remplace le formulaire par une string vide pour qu'il n'apparaisse plus
@@ -246,7 +245,7 @@ function eventDelProduct(response) {
         let total = document.getElementById("totalPrice");
         total.innerHTML = "";
     }
-    if (panier != null || panier.length >= 1) {
+    else {
         for (let i = 0; i < btnDelProduct.length; i++) { //prend en compte TOUS les btnDelProduct
             btnDelProduct[i].addEventListener("click", function (event) { //écoute du bouton btnDelProduct lors d'un click
                 let targ = event.target.dataset.id; // création d'une variable qui contient l'id du produit selectionné
@@ -313,7 +312,6 @@ function post(url, data) {
 
 /** formPost permet de récuperer les données inputs, executer la requete post contenu dans la fonction post puis crée la page confirm achat*/
 function formPost() {
-    let inputOrder = document.getElementsByTagName("input"); // On récupère tous les input de la page (donc ceux concernant le formulaire de commande)
     let formOrder = document.getElementById("formOrder"); // On récupère le formulaire
     formOrder.addEventListener("submit", function(e){ // Lorsque le formulaire est envoyé
         e.preventDefault(); // On l'empêche de changer de page pour le rediriger nous-même
